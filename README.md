@@ -1,6 +1,6 @@
 # NFL_Data_206
 NFL Data group project for CMSC 206 Spring 2021 at Montgomery College 
-
+Data is from https://www.pro-football-reference.com/
 Only contains my portion of the project
 
 Manipulated data from previous NFL seasons using the python libraries: 
