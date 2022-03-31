@@ -34,14 +34,14 @@ def most_yards(season):
 
     df = df.sort_values(by=['Yds']) #Sorts the data frame by # of yards
  
-    #Plotting stuff (Matplotlib 1)
+    #Plotting stuff 
     ax = df["Yds"].plot(kind="bar", xlabel="Teams", ylabel="Yards")
     ax.set_xticklabels(df["Tm"].tolist())
     plt.tight_layout()
     plt.show()
 
     team_name = df["Tm"].tail(1).item() #Gets team name for print
-    num_yds = int(df["Yds"].tail(1).item())#Gets # of yards for print 
+    num_yds = int(df["Yds"].tail(1).item()) #Gets # of yards for print 
 
     print("The " + team_name + " had the most passing yards in " + season + " with a total of", num_yds, "yards!")
 
@@ -75,7 +75,7 @@ def top_five_ints(season):
     df = df.sort_values(by=["Int"], ascending=False)
 
     int_list = df["Int"].tolist()
-    int_list.sort(reverse=True) #Data analysis using list/dicts 2
+    int_list.sort(reverse=True) 
     
     team_list = df["Tm"].tolist()
 
@@ -102,7 +102,7 @@ def top_five_ints(season):
     for i, txt in enumerate(int_list):
         print(team_list[i] + ":", txt, "interceptions.")
 
-    print("The average # of interceptions in", season, "was", math.ceil(df["Int"].mean()), "interceptions.") #(Pandas 2)
+    print("The average # of interceptions in", season, "was", math.ceil(df["Int"].mean()), "interceptions.") 
 
 def yards_record_correlation(season):
     #if/elif sequence to get right csv file
@@ -148,12 +148,7 @@ def yards_record_correlation(season):
     standings_list = standings["W"].tolist()
     annotations = passing["Tm"].tolist()
 
-    plt.scatter(passing_list, standings_list) #(Matplotlib 2)
-
-    # for i, txt in enumerate(annotations): #This labeled each point to make sure it represented the right team
-    #     plt.annotate(txt, (passing_list[i], standings_list[i]))
-
-    #Line of best fit section, could be a separate function but i'm lazy | https://www.kite.com/python/answers/how-to-plot-a-line-of-best-fit-in-python
+    plt.scatter(passing_list, standings_list) 
 
     x = np.array(passing_list)
     y = np.array(standings_list)
